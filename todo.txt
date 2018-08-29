@@ -1,0 +1,23 @@
+List of things to do because brain is scattered everywhere
+
+Name generator - Done
+3rd Edition dice roller - Done
+Help file - Up to date
+Appearance generator
+Stat generator
+dice roller - Will stick with RPbot for now
+Links list - add the ability to display a specific list - Done
+Podcast list - Done
+Greeter - take over greeting responsibilities from mee6 (greetbot) - almost         done. finalize wording with Matt - Done
+Combat / Profile
+Ensure all commands are case neutral
+Bot command channel - Up to date for BB
+Prefix changer, unnecessary atm but im going to fix that now. - done
+
+1d8 + 4d6 - Roll one octahedron and four hexahedrons.
+1d20+5 # Grog attacks - Roll dice with a comment. Done
+2d6>=5 - Roll two hexahedrons and take only the ones that turned greater or equal to five (aka difficulty check). Prints the number of successes.
+3d6! - Exploding dice.
+1d10!>9 - Explode nine and ten.(edited)
+
+/*  

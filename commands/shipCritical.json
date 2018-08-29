@@ -1,0 +1,15 @@
+{
+  
+    "2": "2: LIMITED DECOMPRESSION. The integrity of the bridge or some other populated module is breached, venting oxygen into space. Roll a die at the beginning of each following turn - on a six, the module suffers complete explosive decompression (page 99). The engineer can repair the breach in the engineer phase.",
+    "3": "3: STRUCTURAL DAMAGE. The Armour Rating of the ship is reduced by 2, and Signature is increased by 2 until the damage is repaired",
+    "4": "4: DAMAGED SENSORS. The sensor operator gets a -2 to all her rolls until the damage is repaired.",
+  "5": "5: DAMAGED THRUSTERS. The ship becomes harder to control. Maneuverability is decreased by 2.",
+  "6": "6: DAMAGED POWER COUPLING. The power flow from the reactor to the rest of the ship is reduced. The ship’s EP pool is decreased by 2.",
+  "7": "7: DESTROYED MODULE. A random module is destroyed – it cannot be used until the damage is repaired. Use dice to randomly determine which module is affected. The three required modules bridge, reactor and graviton projector cannot be hit (they have their own critical damage rules). If the module is populated, its occupants risk injury (see the box on the previous page).",
+  "8": "8: DISABLED WEAPON SYSTEM. One of the weapon systems on the ship is hit and stops working. If you have more than one weapon system, determine which is hit randomly. If the ship has no weapons at all, reroll this result.",
+  "9": "9: DISABLED GRAVITON PROJECTOR. The ship loses its propulsion. It continues forward at a constant speed. The pilot can no longer perform any actions.",
+  "10": "10: DESTROYED BRIDGE. The ship can no longer be maneuvered. The captain, pilot and sensor operator can no longer perform their actions. The engineer and gunner stations are normally not on the bridge, so they can act normally. Everyone on the bridge risks damage, and the module suffers explosive decompression.",
+  "11": "11: CHAIN REACTION. Roll twice on the table.",
+  "12": "12: REACTOR DETONATION. A critical hit in the reactor is the worst possible outcome. Reactors in the Third Horizon generate enormous amounts of energy, and a critical hit in the reactor releases all this energy at once. The effect is disastrous – the ship is broken apart and lost forever. Everyone onboard risks serious damage (see the boxed text), and are of course subjected to immediate explosive decompression."
+
+}

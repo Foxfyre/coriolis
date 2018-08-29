@@ -1,0 +1,29 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "Blunderbot",
+  "version": "0.0.1",
+  "description": "A warhammer fantasy roleplay 4th edition Bot",
+  "main": "node coriolis.js",
+  "scripts": {
+    "start": "node coriolis.js",
+    "stop": "node server.stop.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "express": "^4.16.3"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": {
+    "url": "https://github.com/Foxfyre/coriolis"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
