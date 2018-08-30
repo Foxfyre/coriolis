@@ -40,7 +40,6 @@ exports.run = (client, message, args) => {
  }
   
   function pushRoll (diceQty, message) {
-    message.channel.send(`diceQty is ${diceQty}`);
     const fs = require("fs");
     const corRolls = JSON.parse(fs.readFileSync("./commands/corRolls.json","utf8"));
     

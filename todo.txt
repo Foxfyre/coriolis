@@ -20,4 +20,10 @@ Prefix changer, unnecessary atm but im going to fix that now. - done
 3d6! - Exploding dice.
 1d10!>9 - Explode nine and ten.(edited)
 
+  /*const dieNum=[":one:",":two:",":three:",":four:",":five:",":six:"] // array of emoji
+const rnd6=() => Math.floor(Math.random()*6)+1 // makes a random number between 1 and 6
+const roll = [rnd6(),rnd6()] //puts two of those random numbers in an array
+console.log(roll.join('')) // logs the roll numbers, join just concats the array as a string
+console.log(dieNum[roll[0]-1],dieNum[roll[1]-1]) // logs the emoji from the array using a rolled number in the array*/
+
 /*  
