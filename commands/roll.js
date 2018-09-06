@@ -4,17 +4,17 @@ exports.run = (client, message, args) => {
   let argsArray = args.split(/(\D)/i);
   let diceQty = 0;
   // if the input is a d# style, sub the blank for a 1. d6 = 1d6; else dice quantity equals the first set of digits
-  if (argsArray[0] === "") {
-    diceQty = 1;
-  } else {
-    diceQty = argsArray[0];
-  }
+  
+  argsArray[0] === "" ? diceQty = 1 : diceQty = argsArray[0];
+  
   //
   let diceSide = argsArray[2];
   
   // if there is no value follownig the D, the first if triggers a push roll which is syntaxed like 4d run the pushRoll function. else if the end contains a digit then runn the standard roll function. else print that there's something wrong.
   if (argsArray[2] === "") {
     pushRoll(diceQty, message);
+  } else if (argsArray[2] === "66") {
+    d66();
   } else if (/\d/.test(argsArray[2]) === true) {
     standard(diceQty, diceSide);
   } else {
@@ -41,7 +41,7 @@ exports.run = (client, message, args) => {
   
   function pushRoll (diceQty, message) {
     const fs = require("fs");
-    const corRolls = JSON.parse(fs.readFileSync("./commands/corRolls.json","utf8"));
+    const corRolls = require("./corRolls.json");
     
     let resultSuccess = 0;
     let resultsArray = [];
@@ -105,5 +105,28 @@ exports.run = (client, message, args) => {
    } else {
    message.channel.send(`<@!${message.member.id}> rolled **${resultSuccess} Successes** from ${diceQty}: ${resultsPrint}`);
    }
+  }
+  
+  function d66() {
+    let sumArray = [];
+    let addOn = args[0];
+  
+    const baseNum = addOn => ( /[^\d\w]/.test(addOn) ? addOn.slice(1,addOn.length) : addOn = 0)
+  // if there is a non digit/alpha character at the front, strip it and return the value. else set value to 0 
+  if (args) {
+    addOn = baseNum(addOn);
+  } else {
+    addOn = 0;
+  }
+  
+  const randRoll = side => (Math.floor(Math.random() * (side) + 1));
+  
+  const diceSide = 6;
+  
+  const roll = [randRoll(diceSide),randRoll(diceSide)];
+  
+  sumArray = roll.join("");
+  let totalRoll = parseInt(sumArray) + parseInt(addOn);
+  message.channel.send(`<@!${message.member.id}> rolled **${sumArray}**.`);
   }
 }
