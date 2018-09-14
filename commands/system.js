@@ -1,5 +1,5 @@
   const fs = require("fs");
-  const crit = require("./critical.json");
+  const system = require("./system.json");
 
 exports.run = (client, message, args) => {
   let sumArray = "";
@@ -21,5 +21,5 @@ exports.run = (client, message, args) => {
   
   sumArray = roll.join("");
   let totalRoll = parseInt(sumArray) + parseInt(addOn);
-  message.channel.send(`${crit[parseInt(totalRoll)]}`);
+  message.channel.send(`${system[parseInt(totalRoll)]}`);
 }
