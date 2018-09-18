@@ -42,7 +42,7 @@ exports.run = (client, message, args) => {
       pushPlus = parseInt(args[0]);
     }
     
-    
+    // get previous roll information from json and set. if player doesnt exist return message
     corRolls.map((players, index) => {
       if (players.id == message.member.id) {
         pushRolled = players.rolled;
