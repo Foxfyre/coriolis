@@ -7,6 +7,17 @@ exports.run = (client, message, args) => {
   
   argsArray[0] === "" ? diceQty = 1 : diceQty = argsArray[0];
   
+  
+  if (diceQty == 66) {
+    message.channel.send("Psst... I think you meant c:roll d66");
+    return;
+  }
+  if (diceQty > 30) {
+    message.channel.send("The dice limit for this bot is 30 dice. If you are seriously rolling more than that, perhaps the GM can simply let you have a Critical Success...");
+    return;
+  }
+  
+  
   //
   let diceSide = argsArray[2];
   
@@ -40,6 +51,7 @@ exports.run = (client, message, args) => {
  }
   
   function pushRoll (diceQty, message) {
+    
     const fs = require("fs");
     const corRolls = require("./corRolls.json");
     
@@ -101,32 +113,24 @@ exports.run = (client, message, args) => {
    
    let resultsPrint = resultsArray.join(" ");
    if (resultSuccess == 1) {
-     message.channel.send(`<@!${message.member.id}> rolled **${resultSuccess} Success** from ${diceQty}: ${resultsPrint}`);
+     message.channel.send(`<@!${message.member.id}> rolled **${resultSuccess} Success** from ${diceQty}d: ${resultsPrint}`);
    } else {
-   message.channel.send(`<@!${message.member.id}> rolled **${resultSuccess} Successes** from ${diceQty}: ${resultsPrint}`);
+   message.channel.send(`<@!${message.member.id}> rolled **${resultSuccess} Successes** from ${diceQty}d: ${resultsPrint}`);
    }
   }
-  
+    
   function d66() {
     let sumArray = [];
-    let addOn = args[0];
-  
-    const baseNum = addOn => ( /[^\d\w]/.test(addOn) ? addOn.slice(1,addOn.length) : addOn = 0)
+    
+    const dieNum = [":one:",":two:",":three:",":four:",":five:",":six:"];
+
   // if there is a non digit/alpha character at the front, strip it and return the value. else set value to 0 
-  if (args) {
-    addOn = baseNum(addOn);
-  } else {
-    addOn = 0;
-  }
+    const randRoll = side => (Math.floor(Math.random() * (side) + 1));
   
-  const randRoll = side => (Math.floor(Math.random() * (side) + 1));
+    const diceSide = 6;
   
-  const diceSide = 6;
-  
-  const roll = [randRoll(diceSide),randRoll(diceSide)];
-  
-  sumArray = roll.join("");
-  let totalRoll = parseInt(sumArray) + parseInt(addOn);
-  message.channel.send(`<@!${message.member.id}> rolled **${sumArray}**.`);
+    const roll = [randRoll(diceSide),randRoll(diceSide)];    
+    
+    message.channel.send(`<@!${message.member.id}> rolled ${dieNum[roll[0]-1]}${dieNum[roll[1]-1]}.`);
   }
 }
