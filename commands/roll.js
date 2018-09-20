@@ -9,7 +9,8 @@ exports.run = (client, message, args) => {
   
   
   if (diceQty == 66) {
-    message.channel.send("Psst... I think you meant c:roll d66");
+    message.channel.send(`Psst... I think you meant c:roll d66, like this...`);
+    d66();
     return;
   }
   if (diceQty > 30) {
@@ -131,6 +132,6 @@ exports.run = (client, message, args) => {
   
     const roll = [randRoll(diceSide),randRoll(diceSide)];    
     
-    message.channel.send(`<@!${message.member.id}> rolled ${dieNum[roll[0]-1]}${dieNum[roll[1]-1]}.`);
+    message.channel.send(`<@!${message.member.id}> rolled ${dieNum[roll[0]-1]} ${dieNum[roll[1]-1]}.`);
   }
 }
