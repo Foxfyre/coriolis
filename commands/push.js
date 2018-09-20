@@ -89,11 +89,11 @@ exports.run = (client, message, args) => {
     if (pushPlus > 0 && pushSuccess > 0) {
       message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")}`);
     } else if (pushPlus > 0 && pushSuccess == 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")}`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")}`);
     } else if (pushPlus == 0 && pushSuccess > 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d: ${pushArray.join(" ")} **total successes ${pushSuccess + resultSuccess}**`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d: ${pushArray.join(" ")} \nFinal Result: **${pushSuccess + resultSuccess} Success(es)**`);
     } else if (pushPlus == 0 && pushSuccess == 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll rerolling ${baseRoll}d: ${pushArray.join(" ")}`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d: ${pushArray.join(" ")}`);
     }
 }
 
