@@ -14,7 +14,7 @@ standard(1,6);
     }
     // After for loop...
     if (resultsSum === 1) {
-      message.channel.send(`<@!${message.member.id}> rolled a 1. This Radiation Point becomes permanent`);
+      message.channel.send(`<@!${message.member.id}> rolled a **1**. This Radiation Point becomes permanent`);
     } else {
       message.channel.send(`<@!${message.member.id}> rolled a **${resultsSum}**. You heal 1 Radiation Point`);
     }

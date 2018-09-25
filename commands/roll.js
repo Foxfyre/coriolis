@@ -58,42 +58,29 @@ exports.run = (client, message, args) => {
     
     let resultSuccess = 0;
     let resultsArray = [];
-    
-    diceSide = ["one","two","three","four","five","six"];
 
-    const oneDie = `:one:`;
-    const twoDie = `:two:`;
-    const threeDie = `:three:`;
-    const fourDie = `:four:`;
-    const fiveDie = `:five:`;
     const sixRed = client.emojis.find("name","red6"); 
-    const sixDie = `:six:`;
+    
+    const dieNum = [":one:",":two:",":three:",":four:",":five:",":red6:"];
     
     let userId = message.member.id;
+    
+    const randRoll = side => (Math.floor(Math.random() * (side) + 1));
+  
+    const diceSide = 6;
+    
     // randomizes for the number of dice, pushing the code to the array to display as dice on output.
     for (let i = 0; i < diceQty; i++) {
-      let randNum = Math.floor(Math.random() * (diceSide.length));
-      if (diceSide[randNum] == "one") {
-        resultsArray.push(`${oneDie}`); 
-      }
-      if (diceSide[randNum] == "two") {
-        resultsArray.push(`${twoDie}`); 
-      }
-      if (diceSide[randNum] == "three") {
-        resultsArray.push(`${threeDie}`); 
-      }
-      if (diceSide[randNum] == "four") {
-        resultsArray.push(`${fourDie}`); 
-      }
-      if (diceSide[randNum] == "five") {
-        resultsArray.push(`${fiveDie}`); 
-      }
-      if (diceSide[randNum] == "six") {
+      
+      let rolled = randRoll(diceSide);
+      
+      if (rolled === 6) {
         resultsArray.push(`${sixRed.toString()}`); 
+        resultSuccess += 1;
+      } else {
+        resultsArray.push(dieNum[rolled-1]);
       }
-      if (diceSide[randNum] == "six") {
-        resultSuccess += 1; 
-      }
+      
     }
    // maps through the JSON and deletes the previous entry for the member
     corRolls.map((players, index) => {
