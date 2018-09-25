@@ -2,12 +2,7 @@ exports.run = (client, message, args) => {
   const fs = require("fs");
   const corRolls = JSON.parse(fs.readFileSync("./commands/corRolls.json","utf8"));
   
-  //let diceQty;
-  //let roll;
-  //let rollType = "";
   let resultSuccess = 0;
-  //let resultsArray = [];
-  //let resultsSum = 0;
   let diceSide = ["one","two","three","four","five","six"];
   
   const oneDie = `:one:`;
@@ -87,13 +82,13 @@ exports.run = (client, message, args) => {
     }
     //let resultsPrint = pushArray.join("");
     if (pushPlus > 0 && pushSuccess > 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")}`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")} \nFinal Result: **${pushSuccess + resultSuccess} Success(es)**`);
     } else if (pushPlus > 0 && pushSuccess == 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")}`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d + ${args[0]}d: ${pushArray.join(" ")} \nFinal Result: **${pushSuccess + resultSuccess} Success(es)**`);
     } else if (pushPlus == 0 && pushSuccess > 0) {
       message.channel.send(`<@!${message.member.id}> pushed the roll, holding ${keptArray.join(" ")} & rerolling ${baseRoll}d: ${pushArray.join(" ")} \nFinal Result: **${pushSuccess + resultSuccess} Success(es)**`);
     } else if (pushPlus == 0 && pushSuccess == 0) {
-      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d: ${pushArray.join(" ")}`);
+      message.channel.send(`<@!${message.member.id}> pushed the roll, rerolling ${baseRoll}d: ${pushArray.join(" ")} \nFinal Result: **${pushSuccess + resultSuccess} Success(es)**`);
     }
 }
 

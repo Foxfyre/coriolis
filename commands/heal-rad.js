@@ -14,9 +14,9 @@ standard(1,6);
     }
     // After for loop...
     if (resultsSum === 1) {
-      message.channel.send(`<@!${message.member.id}> rolled 1. You failed to heal the Insanity Point, and it has become permanent.`);
+      message.channel.send(`<@!${message.member.id}> rolled a 1. This Radiation Point becomes permanent`);
     } else {
-      message.channel.send(`<@!${message.member.id}> rolled **${resultsSum}**. You heal one Insanity Point.`);
+      message.channel.send(`<@!${message.member.id}> rolled a **${resultsSum}**. You heal 1 Radiation Point`);
     }
  }
 }
